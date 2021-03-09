@@ -17,6 +17,7 @@ public class LoginController {
 
   @GetMapping("/login")
   public ModelAndView login() {
+    System.out.println("login");
     return new ModelAndView("oauthLogin",
         Collections.singletonMap("url", authorizationRequestBaseUri + "/" +
             clientRegistrationRepository.findByRegistrationId("pingidentity").getRegistrationId()));
