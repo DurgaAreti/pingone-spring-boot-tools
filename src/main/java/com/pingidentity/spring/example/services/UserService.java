@@ -29,7 +29,7 @@ public class UserService {
   public ResponseEntity<User> createUser(User user) {
     return clientRestTemplate.exchange(
         RequestEntity
-            .post(URI.create("https://api.pingone.com/v1/environments/" + environmentId + "/users"))
+            .post(URI.create("https://api.pingone.asia/v1/environments/" + environmentId + "/users"))
             .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
             .body(user),
         User.class);
@@ -38,7 +38,7 @@ public class UserService {
   public ResponseEntity<Map> deleteUser(String userId) {
     return clientRestTemplate.exchange(
         RequestEntity
-            .delete(URI.create("https://api.pingone.com/v1/environments/" + environmentId + "/users/" + userId))
+            .delete(URI.create("https://api.pingone.asia/v1/environments/" + environmentId + "/users/" + userId))
             .build(),
         Map.class);
   }
@@ -47,7 +47,7 @@ public class UserService {
     try {
       return clientRestTemplate.exchange(
           RequestEntity
-              .get(URI.create("https://api.pingone.com/v1/environments/" + environmentId + "/users?filter="
+              .get(URI.create("https://api.pingone.asia/v1/environments/" + environmentId + "/users?filter="
                   + URLEncoder.encode("email eq \"" + userName + "\" or username eq \"" + userName + "\"",
                   StandardCharsets.UTF_8.toString())))
               .build(),
