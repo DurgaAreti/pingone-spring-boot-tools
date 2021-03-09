@@ -17,7 +17,7 @@ public class DefaultControllerAdvice {
 
   @ExceptionHandler(Throwable.class)
   public String handleException(Exception ex, RedirectAttributes redirectAttrs) {
-    log.error("Something went wrong. ", ex);
+    log.error("Something went wrong.. ", ex);
     messagesService.error((Map<String, Object>) redirectAttrs.getFlashAttributes(), "Something went wrong. " + ex.getLocalizedMessage());
     return "redirect:/login";
   }
