@@ -43,7 +43,7 @@ public class PasswordManagementService {
     return restTemplate.exchange(
         RequestEntity
             .put(URI.create(
-                "https://api.pingone.com/v1/environments/" + environmentId + "/users/" + userId + "/password"))
+                "https://api.pingone.asia/v1/environments/" + environmentId + "/users/" + userId + "/password"))
             .header(HttpHeaders.CONTENT_TYPE, "application/vnd.pingidentity.password.reset+json")
             .body(changePasswordData),
         Map.class);
@@ -88,7 +88,7 @@ public class PasswordManagementService {
     return clientRestTemplate.exchange(
         RequestEntity
             .post(URI.create(
-                "https://api.pingone.com/v1/environments/" + environmentId + "/users/" + userId + "/password"))
+                "https://api.pingone.asia/v1/environments/" + environmentId + "/users/" + userId + "/password"))
             .header(HttpHeaders.CONTENT_TYPE, "application/vnd.pingidentity.password.sendRecoveryCode+json")
             .build(),
         Map.class);
@@ -109,7 +109,7 @@ public class PasswordManagementService {
     return clientRestTemplate.exchange(
         RequestEntity
             .post(URI.create(
-                "https://api.pingone.com/v1/environments/" + environmentId + "/users/" + userId + "/password"))
+                "https://api.pingone.asia/v1/environments/" + environmentId + "/users/" + userId + "/password"))
             .header(HttpHeaders.CONTENT_TYPE, "application/vnd.pingidentity.password.recover+json")
             .body(resetPasswordData),
         Map.class);
@@ -121,7 +121,7 @@ public class PasswordManagementService {
   public PasswordPolicy.PasswordPolicies getPasswordPolicies() {
     return clientRestTemplate.exchange(
         RequestEntity
-            .get(URI.create("https://api.pingone.com/v1/environments/" + environmentId + "/passwordPolicies"))
+            .get(URI.create("https://api.pingone.asia/v1/environments/" + environmentId + "/passwordPolicies"))
             .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
             .build(),
         PasswordPolicy.PasswordPolicies.class)
