@@ -21,7 +21,7 @@ public class PopulationService {
 
   public Population.Populations getAllPopulations() {
     RequestEntity<Void> requestEntity = RequestEntity
-        .get(URI.create("https://api.pingone.com/v1/environments/" + environmentId + "/populations"))
+        .get(URI.create("https://api.pingone.asia/v1/environments/" + environmentId + "/populations"))
         .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
         .build();
 
